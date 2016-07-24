@@ -13,6 +13,7 @@ namespace Vidly.Models
     public class ExternalLoginListViewModel
     {
         //Comment from Laptop
+        //Comment from desktop
         public string ReturnUrl { get; set; }
     }
 
