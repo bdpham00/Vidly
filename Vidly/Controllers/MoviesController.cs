@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using Vidly.Models; 
+using Vidly.Models;
+using Vidly.ViewModels;
 
 namespace Vidly.Controllers
 {
@@ -14,10 +15,22 @@ namespace Vidly.Controllers
         {
             var movie = new Movie() { Name = "Shrek!" };
 
-            ViewData["Movie"] = movie;
-            ViewBag.Movie = movie;
+            //Never use these
+            //ViewData["Movie"] = movie;
+            //ViewBag.Movie = movie;
+            var customers = new List<Customer>
+            {
+                new Customer {Name = "Customer1" },
+                new Customer {Name = "Customer2" }
+            };
 
-            return View(); 
+            var viewModel = new RandomMovieViewModel
+            {
+                Movie = movie,
+                Customers = customers
+            };
+
+            return View(viewModel); 
             //return Content("Hello");
             //return RedirectToAction("Index", "Home", new { page = 1, sortBy = "name" });  
             //return new EmptyResult(); 
