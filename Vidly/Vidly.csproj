@@ -312,10 +312,32 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201607262322079_InitialModel.cs" />
+    <Compile Include="Migrations\201607262322079_InitialModel.Designer.cs">
+      <DependentUpon>201607262322079_InitialModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201607262331348_AddIsSubscribedToCustomer.cs" />
+    <Compile Include="Migrations\201607262331348_AddIsSubscribedToCustomer.Designer.cs">
+      <DependentUpon>201607262331348_AddIsSubscribedToCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201607262335540_AddMembershipType.cs" />
+    <Compile Include="Migrations\201607262335540_AddMembershipType.Designer.cs">
+      <DependentUpon>201607262335540_AddMembershipType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201607262342260_PopulateMembershipTypes.cs" />
+    <Compile Include="Migrations\201607262342260_PopulateMembershipTypes.Designer.cs">
+      <DependentUpon>201607262342260_PopulateMembershipTypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201607262355083_ApplyAnnotationsToCustomerName.cs" />
+    <Compile Include="Migrations\201607262355083_ApplyAnnotationsToCustomerName.Designer.cs">
+      <DependentUpon>201607262355083_ApplyAnnotationsToCustomerName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\MembershipType.cs" />
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -386,7 +408,10 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Movies\Random.cshtml" />
     <Content Include="Views\Shared\_NavBar.cshtml" />
+    <Content Include="Views\Customers\Details.cshtml" />
+    <Content Include="Views\Movies\Index.cshtml" />
     <Content Include="Views\Customers\Index.cshtml" />
+    <Content Include="Views\Shared\_Footer.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -398,6 +423,23 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201607262322079_InitialModel.resx">
+      <DependentUpon>201607262322079_InitialModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607262331348_AddIsSubscribedToCustomer.resx">
+      <DependentUpon>201607262331348_AddIsSubscribedToCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607262335540_AddMembershipType.resx">
+      <DependentUpon>201607262335540_AddMembershipType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607262342260_PopulateMembershipTypes.resx">
+      <DependentUpon>201607262342260_PopulateMembershipTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607262355083_ApplyAnnotationsToCustomerName.resx">
+      <DependentUpon>201607262355083_ApplyAnnotationsToCustomerName.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
