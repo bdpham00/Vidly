@@ -332,6 +332,14 @@
     <Compile Include="Migrations\201607262355083_ApplyAnnotationsToCustomerName.Designer.cs">
       <DependentUpon>201607262355083_ApplyAnnotationsToCustomerName.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201607270715338_AddNameField.cs" />
+    <Compile Include="Migrations\201607270715338_AddNameField.Designer.cs">
+      <DependentUpon>201607270715338_AddNameField.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201607270719396_SetMembershipTypeNames.cs" />
+    <Compile Include="Migrations\201607270719396_SetMembershipTypeNames.Designer.cs">
+      <DependentUpon>201607270719396_SetMembershipTypeNames.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -439,6 +447,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201607262355083_ApplyAnnotationsToCustomerName.resx">
       <DependentUpon>201607262355083_ApplyAnnotationsToCustomerName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607270715338_AddNameField.resx">
+      <DependentUpon>201607270715338_AddNameField.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607270719396_SetMembershipTypeNames.resx">
+      <DependentUpon>201607270719396_SetMembershipTypeNames.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
