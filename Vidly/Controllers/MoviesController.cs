@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using Vidly.Models;
 using Vidly.ViewModels;
+using Vidly.Migrations;
 
 namespace Vidly.Controllers
 {
@@ -55,9 +56,15 @@ namespace Vidly.Controllers
         }
 
         //Passing value through URL
-        public ActionResult Edit(int id)
+        public ActionResult Edit(Movie movie)
         {
-            return Content("id= " + id); 
+            var genre = _context.Genre.ToList();
+            var viewModel = new MovieFormViewModel
+            {
+                Genre = genre,
+                Movie = movie
+            };
+            return View(viewModel);
         }
         // /Movies
         public ViewResult Index()
@@ -78,6 +85,21 @@ namespace Vidly.Controllers
         {
             var movie = _context.Movies.SingleOrDefault(c => c.Id == id);
             return View(movie); 
+        }
+
+        public ActionResult New()
+        {
+            var genre = _context.Genre.ToList();
+            var viewModel = new MovieFormViewModel
+            {
+                Genre = genre
+            };
+            return View(viewModel);
+        }
+
+        public ActionResult Save()
+        {
+            return View(); 
         }
     }
 }
