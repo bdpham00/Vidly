@@ -96,10 +96,22 @@ namespace Vidly.Controllers
             };
             return View(viewModel);
         }
-
-        public ActionResult Save()
+        [HttpPost]
+        public ActionResult Save(Movie movie)
         {
-            return View(); 
+            if (movie.Id == 0)
+                _context.Movies.Add(movie);
+            else
+            {
+                var movieInDb = _context.Movies.Single(c => c.Id == movie.Id);
+                movieInDb.Name = movie.Name;
+                movieInDb.ReleaseDate = movie.ReleaseDate;
+                movieInDb.Genre = movie.Genre;
+                movieInDb.NumberInStock = movie.NumberInStock;
+            }
+            _context.SaveChanges();
+
+            return RedirectToAction("Index", "Movies"); 
         }
     }
 }
