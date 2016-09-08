@@ -113,5 +113,10 @@ namespace Vidly.Controllers
 
             return RedirectToAction("Index", "Movies"); 
         }
+
+        public ActionResult Test()
+        {
+            return View(); 
+        }
     }
 }
