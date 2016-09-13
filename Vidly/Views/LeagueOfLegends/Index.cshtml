@@ -1,0 +1,16 @@
+﻿@model Vidly.ViewModels.SummonerViewModel
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Search Summoner</h2>
+
+@using (Html.BeginForm("SearchSummoner", "LeagueOfLegends"))
+{
+    <div class="form-group">
+        Summoner Name<br/>
+        @Html.TextBoxFor(model => model.Summoner.Name, new {@class = "form-group"})
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+}
+

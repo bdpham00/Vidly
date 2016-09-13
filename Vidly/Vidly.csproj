@@ -168,12 +168,24 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Windows.Interactivity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\JetBrains.Platform.Lib.System.Windows.Interactivity.2.0.20140318.0\lib\System.Windows.Interactivity.dll</HintPath>
       <Private>True</Private>
@@ -304,9 +316,12 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\Api\CustomersController.cs" />
     <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LeagueOfLegendsController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MoviesController.cs" />
     <Compile Include="Global.asax.cs">
@@ -348,17 +363,51 @@
     <Compile Include="Migrations\201607280156136_DiableAutomaticMigrations -Force.Designer.cs">
       <DependentUpon>201607280156136_DiableAutomaticMigrations -Force.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201607280449344_AddMovieTable.cs" />
+    <Compile Include="Migrations\201607280449344_AddMovieTable.Designer.cs">
+      <DependentUpon>201607280449344_AddMovieTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201607280453533_AddColumnsToMovie.cs" />
+    <Compile Include="Migrations\201607280453533_AddColumnsToMovie.Designer.cs">
+      <DependentUpon>201607280453533_AddColumnsToMovie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201607280455571_PopulateMovieTable.cs" />
+    <Compile Include="Migrations\201607280455571_PopulateMovieTable.Designer.cs">
+      <DependentUpon>201607280455571_PopulateMovieTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201607292113005_AddGenreTable.cs" />
+    <Compile Include="Migrations\201607292113005_AddGenreTable.Designer.cs">
+      <DependentUpon>201607292113005_AddGenreTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201607292138171_PopulateGenreTable.cs" />
+    <Compile Include="Migrations\201607292138171_PopulateGenreTable.Designer.cs">
+      <DependentUpon>201607292138171_PopulateGenreTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201607292248097_AddValuesToGenreIdColumn.cs" />
+    <Compile Include="Migrations\201607292248097_AddValuesToGenreIdColumn.Designer.cs">
+      <DependentUpon>201607292248097_AddValuesToGenreIdColumn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201609090007439_PopulateCustomers.cs" />
+    <Compile Include="Migrations\201609090007439_PopulateCustomers.Designer.cs">
+      <DependentUpon>201609090007439_PopulateCustomers.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MembershipType.cs" />
+    <Compile Include="Models\Min18YearIfAMember.cs" />
     <Compile Include="Models\Movie.cs" />
+    <Compile Include="Models\Summoner.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\CustomersViewModel.cs" />
+    <Compile Include="ViewModels\MovieFormViewModel.cs" />
+    <Compile Include="ViewModels\CustomerFormViewModel.cs" />
     <Compile Include="ViewModels\RandomMovieViewModel.cs" />
+    <Compile Include="ViewModels\SummonerViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -428,6 +477,11 @@
     <Content Include="Views\Movies\Index.cshtml" />
     <Content Include="Views\Customers\Index.cshtml" />
     <Content Include="Views\Shared\_Footer.cshtml" />
+    <Content Include="Views\Movies\Details.cshtml" />
+    <Content Include="Views\Customers\New.cshtml" />
+    <Content Include="Views\Movies\New.cshtml" />
+    <Content Include="Views\Movies\Edit.cshtml" />
+    <Content Include="Views\LeagueOfLegends\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -467,6 +521,27 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201607280156136_DiableAutomaticMigrations -Force.resx">
       <DependentUpon>201607280156136_DiableAutomaticMigrations -Force.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607280449344_AddMovieTable.resx">
+      <DependentUpon>201607280449344_AddMovieTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607280453533_AddColumnsToMovie.resx">
+      <DependentUpon>201607280453533_AddColumnsToMovie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607280455571_PopulateMovieTable.resx">
+      <DependentUpon>201607280455571_PopulateMovieTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607292113005_AddGenreTable.resx">
+      <DependentUpon>201607292113005_AddGenreTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607292138171_PopulateGenreTable.resx">
+      <DependentUpon>201607292138171_PopulateGenreTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607292248097_AddValuesToGenreIdColumn.resx">
+      <DependentUpon>201607292248097_AddValuesToGenreIdColumn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609090007439_PopulateCustomers.resx">
+      <DependentUpon>201609090007439_PopulateCustomers.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
