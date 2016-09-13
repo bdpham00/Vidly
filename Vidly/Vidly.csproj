@@ -348,18 +348,6 @@
     <Compile Include="Migrations\201607280156136_DiableAutomaticMigrations -Force.Designer.cs">
       <DependentUpon>201607280156136_DiableAutomaticMigrations -Force.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201607280449344_AddMovieTable.cs" />
-    <Compile Include="Migrations\201607280449344_AddMovieTable.Designer.cs">
-      <DependentUpon>201607280449344_AddMovieTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201607280453533_AddColumnsToMovie.cs" />
-    <Compile Include="Migrations\201607280453533_AddColumnsToMovie.Designer.cs">
-      <DependentUpon>201607280453533_AddColumnsToMovie.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201607280455571_PopulateMovieTable.cs" />
-    <Compile Include="Migrations\201607280455571_PopulateMovieTable.Designer.cs">
-      <DependentUpon>201607280455571_PopulateMovieTable.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -440,7 +428,6 @@
     <Content Include="Views\Movies\Index.cshtml" />
     <Content Include="Views\Customers\Index.cshtml" />
     <Content Include="Views\Shared\_Footer.cshtml" />
-    <Content Include="Views\Movies\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -480,15 +467,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201607280156136_DiableAutomaticMigrations -Force.resx">
       <DependentUpon>201607280156136_DiableAutomaticMigrations -Force.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201607280449344_AddMovieTable.resx">
-      <DependentUpon>201607280449344_AddMovieTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201607280453533_AddColumnsToMovie.resx">
-      <DependentUpon>201607280453533_AddColumnsToMovie.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201607280455571_PopulateMovieTable.resx">
-      <DependentUpon>201607280455571_PopulateMovieTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
