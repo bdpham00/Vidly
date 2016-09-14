@@ -30,7 +30,7 @@
 {
     <script>
         $(document).ready(function () {
-            $("#customers").DataTable({
+            var table = $("#customers").DataTable({
                 ajax: {
                     url: "/api/customers",
                     dataSrc: "" //blank since aquiring an array of objects
@@ -43,7 +43,7 @@
                         }
                     },
                     {
-                        data: "name"
+                        data: "membershipType.name"
                     },
                     {
                         data: "id",
@@ -53,7 +53,7 @@
                     }
                 ]
             });
-
+        //-------------------------------------------------------------------------------------------------------------------------
             $("#customers").on("click", ".js-delete", function () {
                 var button = $(this);
 
@@ -63,7 +63,7 @@
                             url: "/api/customers/" + button.attr("data-customer-id"),
                             method: "DELETE",
                             success: function () {
-                                button.parents("tr").remove();
+                                table.row(button.parents("tr")).remove().draw();
                             }
                         });
                     }
