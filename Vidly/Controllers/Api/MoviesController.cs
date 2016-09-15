@@ -5,7 +5,7 @@ using System.Net;
 using System.Web.Http;
 using System.Web.Http.Results;
 using AutoMapper;
-using Vidly.Dtos2;
+using Vidly.Dtos;
 using Vidly.Models;
 
 namespace Vidly.Controllers.Api
