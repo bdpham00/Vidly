@@ -1,24 +1,74 @@
-﻿@model IEnumerable<Vidly.Models.Movie>
+﻿@using Vidly.Models
+@model IEnumerable<Vidly.Models.Movie>
 @{
     ViewBag.Title = "Index";
 }
 
 <h2>Movies</h2>
 @Html.ActionLink("New Movie","New","Movies")
-<table class="table table-bordered table-hover">
+<table id="movies" class="table table-bordered table-hover">
     <thead>
     <tr>
         <th>Movie</th>
         <th>Genre</th>
+        <th>Delete</th>
     </tr>
     </thead>
     <tbody>
-        @foreach (var movie in Model)
-        {
-            <tr>
-                <td>@Html.ActionLink(movie.Name,"Details", "Movies", new {id = movie.Id}, null)</td>
-                <td>@movie.Genre</td>
-            </tr>
-        }
+    @*@foreach (var movie in Model)
+    {
+        <tr>
+            <td>@Html.ActionLink(movie.Name, "Details", "Movies", new {id = movie.Id}, null)</td>
+            <td>@movie.Genre</td>
+            <td><button data-movie-id="@movie.Id" class="btn btn-link js-delete">Delete</button></td>
+        </tr>
+    }*@
     </tbody>
 </table>
+
+@section scripts
+{
+    <script>
+        $(document).ready(function() {
+            var table = $("#movies").DataTable({
+                ajax: {
+                    url: "/api/movies",
+                    dataSrc: ""
+                },
+                columns: [
+                    {
+                        data: "movie",
+                        render: function(data, type, movie) {
+                            return "<a href='/movies/edit'" + movie.id + "'>" + movie.name + "</a>";
+                        }
+                    },
+                    {
+                        data: "genre"
+                    },
+                    {
+                        data: "id",
+                        render: function(data) {
+                            return "<button class='btn-link js-delete' data-movie-id= " + data + ">Delete</button>";
+                        }
+                    }
+                ]
+            });
+            //--------------------------------------------------------------------------------------------------------------------------
+            $("#movies").on("click", ".js-delete", function() {
+                var button = $(this);
+
+                bootbox.confirm("Delete this movie?", function(result) {
+                    if (result) {
+                        $.ajax({
+                            url: "/api/movies/" + button.attr("data-movie-id"),
+                            method: "DELETE",
+                            success: function() {
+                                table.row(button.parents("tr")).remove().draw();
+                            }
+                        });
+                    }
+                });
+            });
+        })
+    </script>
+}
