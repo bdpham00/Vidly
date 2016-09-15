@@ -69,9 +69,11 @@ namespace Vidly.Controllers
         // /Movies
         public ViewResult Index()
         {
-            var movies = _context.Movies.ToList();
+            if (User.IsInRole("CanManageMovies"))
+                return View("List");
 
-            return View(movies);
+
+            return View("ReadOnlyList");
         }
 
         //With attribute routing
@@ -87,6 +89,7 @@ namespace Vidly.Controllers
             return View(movie); 
         }
 
+        [Authorize(Roles = "CanManageMovies")]
         public ActionResult New()
         {
             var genre = _context.Genre.ToList();
