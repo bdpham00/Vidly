@@ -18,7 +18,7 @@
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
-    <IISExpressSSLPort />
+    <IISExpressSSLPort>44335</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
@@ -368,10 +368,6 @@
     <Compile Include="Migrations\201607280134251_AddBirthdateToCustomer.Designer.cs">
       <DependentUpon>201607280134251_AddBirthdateToCustomer.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201607280156136_DiableAutomaticMigrations -Force.cs" />
-    <Compile Include="Migrations\201607280156136_DiableAutomaticMigrations -Force.Designer.cs">
-      <DependentUpon>201607280156136_DiableAutomaticMigrations -Force.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\201607280449344_AddMovieTable.cs" />
     <Compile Include="Migrations\201607280449344_AddMovieTable.Designer.cs">
       <DependentUpon>201607280449344_AddMovieTable.cs</DependentUpon>
@@ -404,6 +400,10 @@
     <Compile Include="Migrations\201609150352212_SeedUsers.Designer.cs">
       <DependentUpon>201609150352212_SeedUsers.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201609160055548_AddDrivingLiscenseToApplicationUser.cs" />
+    <Compile Include="Migrations\201609160055548_AddDrivingLiscenseToApplicationUser.Designer.cs">
+      <DependentUpon>201609160055548_AddDrivingLiscenseToApplicationUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -413,6 +413,7 @@
     <Compile Include="Models\MembershipType.cs" />
     <Compile Include="Models\Min18YearIfAMember.cs" />
     <Compile Include="Models\Movie.cs" />
+    <Compile Include="Models\RoleName.cs" />
     <Compile Include="Models\StockCannotBeZero.cs" />
     <Compile Include="Models\Summoner.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -709,9 +710,6 @@
     <EmbeddedResource Include="Migrations\201607280134251_AddBirthdateToCustomer.resx">
       <DependentUpon>201607280134251_AddBirthdateToCustomer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201607280156136_DiableAutomaticMigrations -Force.resx">
-      <DependentUpon>201607280156136_DiableAutomaticMigrations -Force.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201607280449344_AddMovieTable.resx">
       <DependentUpon>201607280449344_AddMovieTable.cs</DependentUpon>
     </EmbeddedResource>
@@ -736,6 +734,9 @@
     <EmbeddedResource Include="Migrations\201609150352212_SeedUsers.resx">
       <DependentUpon>201609150352212_SeedUsers.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609160055548_AddDrivingLiscenseToApplicationUser.resx">
+      <DependentUpon>201609160055548_AddDrivingLiscenseToApplicationUser.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
@@ -758,7 +759,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>65172</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:65172/</IISUrl>
+          <IISUrl>https://localhost:44335/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

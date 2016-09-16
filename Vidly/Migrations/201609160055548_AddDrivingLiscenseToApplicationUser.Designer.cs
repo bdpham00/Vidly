@@ -7,13 +7,13 @@ namespace Vidly.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class DiableAutomaticMigrationsForce : IMigrationMetadata
+    public sealed partial class AddDrivingLiscenseToApplicationUser : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(DiableAutomaticMigrationsForce));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(AddDrivingLiscenseToApplicationUser));
         
         string IMigrationMetadata.Id
         {
-            get { return "201607280156136_DiableAutomaticMigrations -Force"; }
+            get { return "201609160055548_AddDrivingLiscenseToApplicationUser"; }
         }
         
         string IMigrationMetadata.Source
