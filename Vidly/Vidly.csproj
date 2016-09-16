@@ -368,10 +368,6 @@
     <Compile Include="Migrations\201607280134251_AddBirthdateToCustomer.Designer.cs">
       <DependentUpon>201607280134251_AddBirthdateToCustomer.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201607280156136_DiableAutomaticMigrations -Force.cs" />
-    <Compile Include="Migrations\201607280156136_DiableAutomaticMigrations -Force.Designer.cs">
-      <DependentUpon>201607280156136_DiableAutomaticMigrations -Force.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\201607280449344_AddMovieTable.cs" />
     <Compile Include="Migrations\201607280449344_AddMovieTable.Designer.cs">
       <DependentUpon>201607280449344_AddMovieTable.cs</DependentUpon>
@@ -708,9 +704,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201607280134251_AddBirthdateToCustomer.resx">
       <DependentUpon>201607280134251_AddBirthdateToCustomer.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201607280156136_DiableAutomaticMigrations -Force.resx">
-      <DependentUpon>201607280156136_DiableAutomaticMigrations -Force.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201607280449344_AddMovieTable.resx">
       <DependentUpon>201607280449344_AddMovieTable.cs</DependentUpon>
