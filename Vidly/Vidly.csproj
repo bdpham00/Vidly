@@ -18,7 +18,7 @@
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
-    <IISExpressSSLPort />
+    <IISExpressSSLPort>44335</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
@@ -400,20 +400,31 @@
     <Compile Include="Migrations\201609150352212_SeedUsers.Designer.cs">
       <DependentUpon>201609150352212_SeedUsers.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201609160055548_AddDrivingLiscenseToApplicationUser.cs" />
+    <Compile Include="Migrations\201609160055548_AddDrivingLiscenseToApplicationUser.Designer.cs">
+      <DependentUpon>201609160055548_AddDrivingLiscenseToApplicationUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201609160153254_AddPhoneToApplicationUser.cs" />
+    <Compile Include="Migrations\201609160153254_AddPhoneToApplicationUser.Designer.cs">
+      <DependentUpon>201609160153254_AddPhoneToApplicationUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\ApplicationDbContext.cs" />
+    <Compile Include="Models\ApplicationUser.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Genre.cs" />
-    <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MembershipType.cs" />
     <Compile Include="Models\Min18YearIfAMember.cs" />
     <Compile Include="Models\Movie.cs" />
+    <Compile Include="Models\RoleName.cs" />
     <Compile Include="Models\StockCannotBeZero.cs" />
     <Compile Include="Models\Summoner.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\CustomersViewModel.cs" />
+    <Compile Include="ViewModels\ExternalLoginConfirmationViewModel.cs" />
     <Compile Include="ViewModels\MovieFormViewModel.cs" />
     <Compile Include="ViewModels\CustomerFormViewModel.cs" />
     <Compile Include="ViewModels\RandomMovieViewModel.cs" />
@@ -729,6 +740,12 @@
     <EmbeddedResource Include="Migrations\201609150352212_SeedUsers.resx">
       <DependentUpon>201609150352212_SeedUsers.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609160055548_AddDrivingLiscenseToApplicationUser.resx">
+      <DependentUpon>201609160055548_AddDrivingLiscenseToApplicationUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609160153254_AddPhoneToApplicationUser.resx">
+      <DependentUpon>201609160153254_AddPhoneToApplicationUser.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
@@ -751,7 +768,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>65172</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:65172/</IISUrl>
+          <IISUrl>https://localhost:44335/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
