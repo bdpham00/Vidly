@@ -449,6 +449,7 @@
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Models\NewRentals.cs" />
     <Compile Include="Models\RoleName.cs" />
+    <Compile Include="Models\RootObject.cs" />
     <Compile Include="Models\StockCannotBeZero.cs" />
     <Compile Include="Models\Summoner.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -585,6 +586,7 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="Content\DataTables\css\mixins.scss" />
     <Content Include="Content\DataTables\css\common.scss" />

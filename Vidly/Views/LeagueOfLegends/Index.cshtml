@@ -3,13 +3,13 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Search Summoner</h2>
+<h2>Search RootObject</h2>
 
-@using (Html.BeginForm("SearchSummoner", "LeagueOfLegends"))
+@using (Html.BeginForm("SearchRootObject", "LeagueOfLegends"))
 {
     <div class="form-group">
-        Summoner Name<br/>
-        @Html.TextBoxFor(model => model.Summoner.Name, new {@class = "form-group"})
+        RootObject Name<br/>
+        @Html.TextBoxFor(model => model.RootObject.Name, new {@class = "form-group"})
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
 }
