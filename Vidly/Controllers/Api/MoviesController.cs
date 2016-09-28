@@ -20,7 +20,7 @@ namespace Vidly.Controllers.Api
         }
 
         //GET /api/movies
-        [Authorize(Roles = RoleName.CanManageMovies)]
+        //[Authorize(Roles = RoleName.CanManageMovies)]
         public IEnumerable<MovieDto> GetMovies()
         {
             return _context.Movies.ToList().Select(Mapper.Map<Movie, MovieDto>); 

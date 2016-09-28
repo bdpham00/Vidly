@@ -14,8 +14,8 @@ namespace Vidly.Models
         [Required(ErrorMessage = "The Name field is required.")]
         public string Name { get; set; }
 
-        [Required]
-        public string Genre { get; set; }
+        [Required(ErrorMessage = "What genre is this movie?")]
+        public Genre Genre { get; set; }
 
         [Required]
         public int? GenreId { get; set; }

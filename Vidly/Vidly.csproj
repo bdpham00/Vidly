@@ -449,6 +449,18 @@
     <Compile Include="Migrations\201609252133119_AddNumberAvailableToMovies1.Designer.cs">
       <DependentUpon>201609252133119_AddNumberAvailableToMovies1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201609270039009_ChangeGenreRequirement.cs" />
+    <Compile Include="Migrations\201609270039009_ChangeGenreRequirement.Designer.cs">
+      <DependentUpon>201609270039009_ChangeGenreRequirement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201609270049530_UpdatingDatabase.cs" />
+    <Compile Include="Migrations\201609270049530_UpdatingDatabase.Designer.cs">
+      <DependentUpon>201609270049530_UpdatingDatabase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201609270358423_UpdateGenreInMovies.cs" />
+    <Compile Include="Migrations\201609270358423_UpdateGenreInMovies.Designer.cs">
+      <DependentUpon>201609270358423_UpdateGenreInMovies.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
@@ -476,6 +488,7 @@
   <ItemGroup>
     <Content Include="404.html" />
     <Content Include="App_Readme\Elmah.txt" />
+    <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\DataTables\css\autoFill.bootstrap.css" />
@@ -814,6 +827,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201609252133119_AddNumberAvailableToMovies1.resx">
       <DependentUpon>201609252133119_AddNumberAvailableToMovies1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609270039009_ChangeGenreRequirement.resx">
+      <DependentUpon>201609270039009_ChangeGenreRequirement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609270049530_UpdatingDatabase.resx">
+      <DependentUpon>201609270049530_UpdatingDatabase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609270358423_UpdateGenreInMovies.resx">
+      <DependentUpon>201609270358423_UpdateGenreInMovies.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
