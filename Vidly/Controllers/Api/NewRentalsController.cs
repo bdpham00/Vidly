@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using Glimpse.Mvc.AlternateType;
 using Vidly.Models;
 using Vidly.Dtos2;
 
@@ -30,7 +31,7 @@ namespace Vidly.Controllers.Api
 
                 movie.NumberAvailable--; 
 
-                var rental = new NewRentals
+                var rental = new Rental
                 {
                     Customer = customer,
                     Movie = movie,
@@ -43,6 +44,16 @@ namespace Vidly.Controllers.Api
             _context.SaveChanges();
 
             return Ok(); 
-        } 
+        }
+
+        [HttpGet]
+        public IEnumerable<Rental> GetRentals()
+        {
+            var rentals = _context.NewRentals.ToList();
+            
+            
+
+            return rentals;
+        }
     }
 }

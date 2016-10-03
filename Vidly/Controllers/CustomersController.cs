@@ -25,14 +25,6 @@ namespace Vidly.Controllers
         // GET: Customers
         public ActionResult Index()
         {
-            if (MemoryCache.Default["Genres"] == null)
-            {
-                MemoryCache.Default["Genres"] = _context.Genre.ToList(); 
-            }
-            //var customers = _context.Customers.Include(c => c.MembershipType).ToList(); //Eager loading
-            //return View(customers);
-            var genres = MemoryCache.Default["Genres"] as IEnumerable<Genre>;
-
             return View();
         }
 

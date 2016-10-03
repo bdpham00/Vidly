@@ -6,7 +6,7 @@ using System.Web;
 
 namespace Vidly.Models
 {
-    public class NewRentals
+    public class Rental
     {
         public int Id { get; set; }
 
@@ -18,6 +18,6 @@ namespace Vidly.Models
 
         public DateTime DateRented { get; set; }
 
-        public DateTime DateReturned { get; set; }
+        public DateTime? DateReturned { get; set; }
     }
 }
