@@ -21,14 +21,15 @@ namespace Vidly.Controllers
             var viewModel = new SummonerViewModel();
             return View(viewModel);
         }
-        public async Task<ActionResult> GetChampion()
+        [HttpPost]
+        public async Task<ActionResult> GetSummoner(Summoner summoner)
         {
             string url;
             string api_key;
             string region;
 
             api_key = "5d6c0476-ab4c-4403-aaa8-d7c8a95700bb";
-            url = @"https://na.api.pvp.net/api/lol/na/v1.4/summoner/by-name/shammg0d?api_key=";
+            url = @"https://na.api.pvp.net/api/lol/na/v1.4/summoner/by-name/" + summoner.Name + "?api_key=";
 
             var request = url + api_key;
             HttpClient client = new HttpClient();
@@ -41,10 +42,7 @@ namespace Vidly.Controllers
             HttpResponseMessage responseMessage = await client.GetAsync(request);
             var responseData = responseMessage.Content.ReadAsStringAsync().Result;
 
-            RootObject summonerData = new JavaScriptSerializer().Deserialize<RootObject>(responseData);
-
-
-            var champions = JsonConvert.DeserializeObject<List<RootObject>>(responseData.ToString()).ToArray();
+            Summoner sum = new JavaScriptSerializer().Deserialize<Summoner>(responseData);
 
             return View();
         }

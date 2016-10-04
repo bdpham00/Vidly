@@ -5,11 +5,11 @@
 
 <h2>Search RootObject</h2>
 
-@using (Html.BeginForm("SearchRootObject", "LeagueOfLegends"))
+@using (Html.BeginForm("GetSummoner", "LeagueOfLegends"))
 {
     <div class="form-group">
-        RootObject Name<br/>
-        @Html.TextBoxFor(model => model.RootObject.Name, new {@class = "form-group"})
+        @Html.LabelFor(m => m.Summoner.Name)
+        @Html.TextBoxFor(m => m.Summoner.Name)
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
 }

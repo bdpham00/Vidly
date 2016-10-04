@@ -8,6 +8,6 @@ namespace Vidly.ViewModels
 {
     public class SummonerViewModel
     {
-
+        public Summoner Summoner { get; set; }
     }
 }
